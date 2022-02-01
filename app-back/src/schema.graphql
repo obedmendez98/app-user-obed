@@ -1,0 +1,21 @@
+# schema.graphql
+
+type Query {
+  getAllUsers: [User]
+  getUsers(filter: String): [User!]!
+}
+
+type User {
+  id: ID!
+  name: String!
+  lastname:String!
+  firstname:String!
+  address:String!
+  phone:String!
+}
+
+type Mutation {
+  addUser(name: String!, lastname: String!, firstname: String!, address: String!, phone: String!): [User]
+  deleteUser(id: Int!): [User],
+  updateUser(id: Int!, name: String!, lastname: String!, firstname: String!, address: String!, phone: String!): [User]
+}
